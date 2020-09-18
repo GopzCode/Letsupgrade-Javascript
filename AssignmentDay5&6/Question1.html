@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud Application</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .data {
+        height: 500px;
+        width: 80%;
+        background-color: lightgray;
+        margin-left: 10%;
+        margin-top: 50px;
+        padding: 20px;
+        display: inline-block;
+      }
+
+      .table {
+        width: 100%;
+        margin-top: 20px;
+        /* font-family: calibri; */
+      }
+      th,
+      td {
+        height: 40px;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .form {
+        margin-top: 20px;
+      }
+      input {
+        height: 40px;
+        text-indent: 20px;
+      }
+
+      button {
+        padding: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="data">
+      <h1>Employees</h1>
+
+      <div class="form">
+        <form onsubmit="addEmployee(event)">
+          <input type="text" required placeholder="Name" id="name" />
+          <input type="number" required placeholder="Age" id="age" />
+          <input type="text" required placeholder="city" id="city" />
+          <input type="number" required placeholder="salary" id="salary" />
+          <button type="submit">Add Employee</button>
+        </form>
+      </div>
+
+      <div class="form">
+        <input
+          type="text"
+          placeholder="Start Searching Name here"
+          id="searchName"
+          onkeyup="searchByName()"
+        />
+        <input
+          type="text"
+          placeholder="Start Searching city here"
+          id="searchCity"
+          onkeyup="searchByCity()"
+        />
+      </div>
+
+      <table border="1" class="table" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Sr no</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Salary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody class="tdata" id="tdata"></tbody>
+      </table>
+    </div>
+
+    <script src="assignment1.js"></script>
+  </body>
+</html>
